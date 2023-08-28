@@ -1,11 +1,11 @@
+// Імпортуємо хук
+import { useDispatch } from "react-redux";
 import { MdClose } from "react-icons/md";
+// Імпортуємо генератор екшену
+import { deleteTask, toggleCompleted } from "../../redux/actions";
 import css from "./Task.module.css";
 
 
-// Імпортуємо хук
-import { useDispatch } from "react-redux";
-// Імпортуємо генератор екшену
-import { deleteTask, toggleCompleted } from "../../redux/actions";
 
 export const Task = ({ task }) => {
   // Отримуємо посилання на функцію відправки екшенів
@@ -23,11 +23,11 @@ export const Task = ({ task }) => {
       <input 
         type="checkbox"
         className={css.checkbox}
-        chacked={task.complited}
+        checked={task.completed}
         onChange={handleToggle} 
       />
       <p className={css.text}>{task.text}</p>
-      <button className={css.btn} type="button" onClick={handleDelete}>
+      <button className={css.btn} onClick={handleDelete}>
       <MdClose size={24} />
       </button>
     </div>

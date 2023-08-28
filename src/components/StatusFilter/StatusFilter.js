@@ -1,19 +1,18 @@
-import { Button } from "components/Button/Button";
-import css from "./StatusFilter.module.css";
-import { getStatusFilter } from "../../redux/selectors";
-
 // Імпортуємо хук
 import { useSelector, useDispatch } from "react-redux";
-// Імпортуємо генератор екшену
+import { Button } from "components/Button/Button";
 import { setStatusFilter } from "../../redux/actions";
+import { getStatusFilter } from "../../redux/selectors";
 // Імпортуємо об'єкт значень фільтра
 import { statusFilters } from "../../redux/constants";
+
+import css from "./StatusFilter.module.css";
 
 export const StatusFilter = () => {
   // Отримуємо посилання на функцію відправки екшенів
   const dispatch = useDispatch();
-
   const filter = useSelector(getStatusFilter);
+
 
   // Викликаємо генератор екшену та передаємо значення фільтра
   // Відправляємо результат - екшен зміни фільтра
